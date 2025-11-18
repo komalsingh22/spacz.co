@@ -20,7 +20,7 @@ class SpacezBottomBookingPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100,
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -35,70 +35,84 @@ class SpacezBottomBookingPanel extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 4),
             decoration: BoxDecoration(
               color: const Color(0xFF387B2C),
-              borderRadius: BorderRadius.circular(4),
             ),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.local_offer, color: Colors.white, size: 16),
-                SizedBox(width: 8),
-                Text(
-                  'Book now & Unlock exclusive rewards!',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-          ),
-          const Spacer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      if (discountedPrice != null)
-                        Text(
-                          '₹$originalPrice',
-                          style: const TextStyle(
-                            decoration: TextDecoration.lineThrough,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      const SizedBox(width: 8),
-                      Text(
-                        '₹${discountedPrice ?? originalPrice}',
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(' for $nights nights'),
-                    ],
-                  ),
+                  Icon(Icons.local_offer, color: Colors.white, size: 16),
+                  SizedBox(width: 8),
                   Text(
-                    '$dateRange | $guests guests',
-                    style: const TextStyle(color: Colors.grey),
+                    'Book now & Unlock exclusive rewards!',
+                    style: TextStyle(color: Colors.white),
                   ),
                 ],
               ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFC4683B),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        if (discountedPrice != null)
+                          Text(
+                            '₹$originalPrice',
+                            style: const TextStyle(
+                              decoration: TextDecoration.lineThrough,
+                              color: Colors.red,
+                            ),
+                          ),
+                        const SizedBox(width: 8),
+                        Text(
+                          '₹${discountedPrice ?? originalPrice}',
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Text(' for $nights nights'),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '$dateRange | $guests guests',
+                          style: const TextStyle(color: Colors.grey),
+                        ),
+                        const SizedBox(width: 4),
+                        const Icon(Icons.edit, size: 16, color: Colors.grey),
+                      ],
+                    ),
+                  ],
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFC4683B),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  child: const Text(
+                    'Reserve',
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
-                child: const Text('Reserve'),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

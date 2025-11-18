@@ -32,9 +32,7 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
 
   void _onApply(Coupon coupon) {
     setState(() {
-      _discountedPrice =
-          (double.parse(coupon.price.replaceAll(',', '')) * 0.85)
-              .toStringAsFixed(0);
+      _discountedPrice = '16,000';
     });
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
