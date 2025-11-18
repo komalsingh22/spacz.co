@@ -41,7 +41,7 @@ class SpacezBottomBookingPanel extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(6.0),
               child: const Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.local_offer, color: Colors.white, size: 16),
                   SizedBox(width: 8),
