@@ -28,6 +28,8 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
     ),
   ];
 
+
+
   String? _discountedPrice;
 
   void _onApply(Coupon coupon) {
@@ -100,6 +102,7 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
                   backgroundColor: Colors.white,
                   elevation: 0,
                   foregroundColor: Colors.black,
+                  titleSpacing: 0.0, // Added this line
                 ),
               ),
             ),
@@ -130,9 +133,18 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 16),
-                  SpacezCouponCard(
-                    coupon: _coupons[0],
-                    onApply: () => _onApply(_coupons[0]),
+                  ListView.separated(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: _coupons.length,
+                    itemBuilder: (context, index) {
+                      return SpacezCouponCard(
+                        coupon: _coupons[index],
+                        onApply: () => _onApply(_coupons[index]),
+                      );
+                    },
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(height: 16),
                   ),
                 ],
               ),
