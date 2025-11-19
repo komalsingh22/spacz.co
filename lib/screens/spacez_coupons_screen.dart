@@ -1,5 +1,6 @@
 import 'package:coupons_page/models/coupon.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../widgets/spacez_coupon_card.dart';
 import '../widgets/spacez_bottom_booking_panel.dart';
 
@@ -18,6 +19,7 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
           '15% off when you book for 5 days or more and 20% off when you book for 30 days or more.',
       price: '6,900',
       code: 'LONGSTAY',
+      discount: '15',
     ),
     Coupon(
       title: 'Long Stay',
@@ -25,16 +27,24 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
           '15% off when you book for 5 days or more and 20% off when you book for 30 days or more.',
       price: '6,900',
       code: 'LONGSTAY',
+      discount: '20',
     ),
   ];
 
-
-
   String? _discountedPrice;
+  final String _originalPrice = '19,500';
 
   void _onApply(Coupon coupon) {
+    final originalPriceDouble =
+        double.parse(_originalPrice.replaceAll(',', ''));
+    final discountPercentage = double.parse(coupon.discount);
+    final discountedPriceDouble =
+        originalPriceDouble * (1 - (discountPercentage / 100));
+
     setState(() {
-      _discountedPrice = '16,000';
+      _discountedPrice =
+          NumberFormat.currency(locale: 'en_IN', symbol: '', decimalDigits: 0)
+              .format(discountedPriceDouble);
     });
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -153,7 +163,7 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
         ),
       ),
       bottomNavigationBar: SpacezBottomBookingPanel(
-        originalPrice: '19,500',
+        originalPrice: _originalPrice,
         discountedPrice: _discountedPrice,
         nights: '2',
         dateRange: '24 Apr - 26 Apr',

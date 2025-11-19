@@ -11,6 +11,7 @@ class CouponsPage extends StatelessWidget {
       expiryDate: '2024-12-31',
       price: '10',
       code: 'PIZZA20',
+      discount: '20',
     ),
     Coupon(
       title: 'Free Coffee',
@@ -18,6 +19,7 @@ class CouponsPage extends StatelessWidget {
       expiryDate: '2024-11-30',
       price: '5',
       code: 'COFFEE',
+      discount: '10',
     ),
     Coupon(
       title: '50% Off on Movie Tickets',
@@ -25,6 +27,7 @@ class CouponsPage extends StatelessWidget {
       expiryDate: '2024-10-31',
       price: '15',
       code: 'MOVIE50',
+      discount: '50',
     ),
   ];
 

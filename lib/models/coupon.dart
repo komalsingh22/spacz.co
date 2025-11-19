@@ -4,7 +4,7 @@ class Coupon {
   final String? expiryDate;
   final String price;
   final String code;
-  final String? discount;
+  final String discount;
 
   Coupon({
     required this.title,
@@ -12,6 +12,6 @@ class Coupon {
     this.expiryDate,
     required this.price,
     required this.code,
-    this.discount,
+    required this.discount,
   });
 }
