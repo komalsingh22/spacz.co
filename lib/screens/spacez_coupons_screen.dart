@@ -54,7 +54,13 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
               height: 24,
             ),
             const SizedBox(width: 8),
-            const Text('SPACEZ'),
+            Text(
+              'SPACEZ',
+              style: TextStyle(
+                fontFamily: 'Kalnia',
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ],
         ),
         backgroundColor: Colors.white,
@@ -72,11 +78,11 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
                 decoration: BoxDecoration(
                   border: Border(
                     top: BorderSide(
-                      color: Colors.grey.withOpacity(0.3),
+                      color: Colors.grey.withAlpha(76),
                       width: 1.0,
                     ),
                     bottom: BorderSide(
-                      color: Colors.grey.withOpacity(0.3),
+                      color: Colors.grey.withAlpha(76),
                       width: 1.0,
                     ),
                   ),
