@@ -46,16 +46,21 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SPACEZ'),
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/ICON2_cropped 3.png',
+              height: 24,
+            ),
+            const SizedBox(width: 8),
+            const Text('SPACEZ'),
+          ],
+        ),
         backgroundColor: Colors.white,
         elevation: 0,
         foregroundColor: Colors.black,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {},
-          ),
-        ],
+        actions: [IconButton(icon: const Icon(Icons.menu), onPressed: () {})],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -66,8 +71,14 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
               child: Container(
                 decoration: BoxDecoration(
                   border: Border(
-                    top: BorderSide(color: Colors.grey.withOpacity(0.3), width: 1.0),
-                    bottom: BorderSide(color: Colors.grey.withOpacity(0.3), width: 1.0),
+                    top: BorderSide(
+                      color: Colors.grey.withOpacity(0.3),
+                      width: 1.0,
+                    ),
+                    bottom: BorderSide(
+                      color: Colors.grey.withOpacity(0.3),
+                      width: 1.0,
+                    ),
                   ),
                 ),
                 child: AppBar(
@@ -87,7 +98,10 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 12.0,
+                vertical: 16.0,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -107,10 +121,7 @@ class _SpacezCouponsScreenState extends State<SpacezCouponsScreen> {
                   const SizedBox(height: 24),
                   const Text(
                     'Payment offers:',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 16),
                   SpacezCouponCard(

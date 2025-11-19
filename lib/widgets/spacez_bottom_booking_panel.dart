@@ -35,9 +35,7 @@ class SpacezBottomBookingPanel extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            decoration: BoxDecoration(
-              color: const Color(0xFF387B2C),
-            ),
+            decoration: BoxDecoration(color: const Color(0xFF387B2C)),
             child: Padding(
               padding: const EdgeInsets.all(6.0),
               child: const Row(
@@ -100,8 +98,10 @@ class SpacezBottomBookingPanel extends StatelessWidget {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFC4683B),
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 12,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),

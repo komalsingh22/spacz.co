@@ -6,8 +6,11 @@ class SpacezCouponCard extends StatelessWidget {
   final Coupon coupon;
   final VoidCallback onApply;
 
-  const SpacezCouponCard(
-      {super.key, required this.coupon, required this.onApply});
+  const SpacezCouponCard({
+    super.key,
+    required this.coupon,
+    required this.onApply,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -71,8 +74,10 @@ class SpacezCouponCard extends StatelessWidget {
                         onTap: onApply,
                         child: const Row(
                           children: [
-                            Icon(Icons.local_offer_outlined,
-                                color: Color(0xFFC4683B)),
+                            Icon(
+                              Icons.local_offer_outlined,
+                              color: Color(0xFFC4683B),
+                            ),
                             SizedBox(width: 4),
                             Text(
                               'Apply',
@@ -87,10 +92,7 @@ class SpacezCouponCard extends StatelessWidget {
                     coupon.description,
                     style: const TextStyle(color: Colors.grey, fontSize: 14),
                   ),
-                  const Text(
-                    'Read more',
-                    style: TextStyle(color: Colors.grey),
-                  ),
+                  const Text('Read more', style: TextStyle(color: Colors.grey)),
                 ],
               ),
             ),

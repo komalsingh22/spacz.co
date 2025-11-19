@@ -35,7 +35,24 @@ class CouponsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Coupons')),
+      appBar: AppBar(
+        title: Row(
+          children: [
+            Image.asset(
+              'assets/ICON2_cropped 3.png',
+              height: 30,
+            ),
+            const SizedBox(width: 8),
+            const Text('SPACEZ'),
+          ],
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: ListView.builder(
         itemCount: coupons.length,
         itemBuilder: (context, index) {
