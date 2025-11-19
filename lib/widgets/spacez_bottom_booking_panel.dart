@@ -38,10 +38,10 @@ class SpacezBottomBookingPanel extends StatelessWidget {
             decoration: BoxDecoration(color: const Color(0xFF387B2C)),
             child: Padding(
               padding: const EdgeInsets.all(6.0),
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.local_offer, color: Colors.white, size: 16),
+                  Image.asset('assets/vector.png', height: 16, width: 16),
                   SizedBox(width: 8),
                   Text(
                     'Book now & Unlock exclusive rewards!',
