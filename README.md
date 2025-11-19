@@ -1,16 +1,5 @@
 # coupons_page
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##Images
+<img width="331" height="705" alt="Screenshot 2025-11-19 at 1 35 50 PM" src="https://github.com/user-attachments/assets/a2cc4c42-94a7-4a1b-9054-f6ad40211f90" />
+<img width="331" height="705" alt="Screenshot 2025-11-19 at 1 36 36 PM" src="https://github.com/user-attachments/assets/bd7fe7ba-d743-41bb-b116-54cc50798916" />
